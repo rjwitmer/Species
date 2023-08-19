@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CC6B145A2A8E755F00FCDFC1 /* SpeciesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6B14592A8E755F00FCDFC1 /* SpeciesApp.swift */; };
-		CC6B145C2A8E755F00FCDFC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6B145B2A8E755F00FCDFC1 /* ContentView.swift */; };
+		CC6B145C2A8E755F00FCDFC1 /* SpeciesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6B145B2A8E755F00FCDFC1 /* SpeciesListView.swift */; };
 		CC6B145E2A8E756100FCDFC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC6B145D2A8E756100FCDFC1 /* Assets.xcassets */; };
 		CC6B14612A8E756100FCDFC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC6B14602A8E756100FCDFC1 /* Preview Assets.xcassets */; };
+		CC6B14692A8FF00900FCDFC1 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6B14682A8FF00900FCDFC1 /* Species.swift */; };
+		CCFFA2D02A8FF71E00FBC98F /* SpeciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFA2CF2A8FF71E00FBC98F /* SpeciesViewModel.swift */; };
+		CCFFA2D22A91525D00FBC98F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFA2D12A91525D00FBC98F /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC6B14562A8E755F00FCDFC1 /* Species.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Species.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6B14592A8E755F00FCDFC1 /* SpeciesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesApp.swift; sourceTree = "<group>"; };
-		CC6B145B2A8E755F00FCDFC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CC6B145B2A8E755F00FCDFC1 /* SpeciesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListView.swift; sourceTree = "<group>"; };
 		CC6B145D2A8E756100FCDFC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC6B14602A8E756100FCDFC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CC6B14672A8E766500FCDFC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CC6B14682A8FF00900FCDFC1 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		CCFFA2CF2A8FF71E00FBC98F /* SpeciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewModel.swift; sourceTree = "<group>"; };
+		CCFFA2D12A91525D00FBC98F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,12 @@
 		CC6B14582A8E755F00FCDFC1 /* Species */ = {
 			isa = PBXGroup;
 			children = (
+				CC6B14672A8E766500FCDFC1 /* Info.plist */,
 				CC6B14592A8E755F00FCDFC1 /* SpeciesApp.swift */,
-				CC6B145B2A8E755F00FCDFC1 /* ContentView.swift */,
+				CC6B14682A8FF00900FCDFC1 /* Species.swift */,
+				CCFFA2CF2A8FF71E00FBC98F /* SpeciesViewModel.swift */,
+				CC6B145B2A8E755F00FCDFC1 /* SpeciesListView.swift */,
+				CCFFA2D12A91525D00FBC98F /* DetailView.swift */,
 				CC6B145D2A8E756100FCDFC1 /* Assets.xcassets */,
 				CC6B145F2A8E756100FCDFC1 /* Preview Content */,
 			);
@@ -137,7 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6B145C2A8E755F00FCDFC1 /* ContentView.swift in Sources */,
+				CC6B145C2A8E755F00FCDFC1 /* SpeciesListView.swift in Sources */,
+				CCFFA2D02A8FF71E00FBC98F /* SpeciesViewModel.swift in Sources */,
+				CC6B14692A8FF00900FCDFC1 /* Species.swift in Sources */,
+				CCFFA2D22A91525D00FBC98F /* DetailView.swift in Sources */,
 				CC6B145A2A8E755F00FCDFC1 /* SpeciesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,9 +284,10 @@
 				DEVELOPMENT_TEAM = 664FMHC4VF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Species/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars Species";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,9 +314,10 @@
 				DEVELOPMENT_TEAM = 664FMHC4VF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Species/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars Species";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
