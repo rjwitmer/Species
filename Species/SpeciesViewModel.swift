@@ -19,6 +19,7 @@ class SpeciesViewModel: ObservableObject {
     @Published var count = 0
     @Published var speciesArray: [Species] = []
     @Published var isLoading = false
+
     var urlString: String = "https://swapi.dev/api/species/"
     
     func getData() async {
@@ -69,4 +70,11 @@ class SpeciesViewModel: ObservableObject {
         await getData()     // Get next page of data
         await loadAll()     // Call loadAll() again - will stop when all pages are retried (urlString == nul)
     }
+    
+    func returnedSpeciesURL(urlString: String) -> String {
+        let noSpaces = urlString.replacingOccurrences(of: " ", with: "-")
+        let newURL = noSpaces.replacingOccurrences(of: "'", with: "")
+        return newURL
+    }
+    
 }

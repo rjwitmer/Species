@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    
+    @StateObject var speciesVM = SpeciesViewModel()
     let species: Species
     
     var body: some View {
@@ -22,7 +22,7 @@ struct DetailView: View {
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.gray)
                 .padding(.bottom)
-            
+
             Group {
                 HStack(alignment: .top) {
                     Text("Classification:")
@@ -45,8 +45,6 @@ struct DetailView: View {
                         
                         Text(species.average_height)
                     }
-                    
-                    Spacer()
                     
                     HStack {
                         Text("Lifespan:")
@@ -88,10 +86,55 @@ struct DetailView: View {
             }
             .font(.title2)
             
+            HStack {
+                Spacer()
+                speciesImage
+                Spacer()
+            }
+            
             Spacer()
             
         }
+
         .padding()
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+}
+
+extension DetailView {
+
+    var speciesImage: some View {
+        AsyncImage(url: URL(string: speciesVM.returnedSpeciesURL(urlString: "https://gallaugher.com/wp-content/uploads/2023/04/\(species.name).jpg"))) { phase in
+            if let image = phase.image {    // We have a valid image
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .background(.white)
+                    .cornerRadius(15)
+                    .shadow(radius: 15, x: 5, y: 5)
+                    .padding(.trailing)
+            } else if phase.error != nil {  // We have an error
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .background(.white)
+                    .frame(width: 180, height: 150)
+                    .cornerRadius(15)
+                    .shadow(radius: 15, x: 5, y: 5)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(.gray.opacity(0.5), lineWidth: 1)
+                    }
+                    .padding(.trailing)
+            } else {    // Use a placeholder
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 180, height: 180)
+                    .padding(.trailing)
+            }
+        }
+
     }
 }
 
